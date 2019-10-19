@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Book Search View Controller-->
+        <scene sceneID="46I-cW-NRs">
+            <objects>
+                <viewController storyboardIdentifier="BookSearchViewController" id="AB3-JA-qsx" customClass="BookSearchViewController" customModule="BookSeeker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uaP-Lc-ffg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seach" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9P-2k-a5V">
+                                <rect key="frame" x="20" y="79" width="74.5" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Lim-o2-xzM">
+                                <rect key="frame" x="20" y="130.5" width="374" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Lim-o2-xzM" firstAttribute="leading" secondItem="lqW-jW-hHP" secondAttribute="leading" constant="20" id="D9s-bW-ojh"/>
+                            <constraint firstItem="Q9P-2k-a5V" firstAttribute="leading" secondItem="lqW-jW-hHP" secondAttribute="leading" constant="20" id="dTb-eg-BRb"/>
+                            <constraint firstItem="Lim-o2-xzM" firstAttribute="top" secondItem="Q9P-2k-a5V" secondAttribute="bottom" constant="20" id="iMx-Ib-ziE"/>
+                            <constraint firstItem="lqW-jW-hHP" firstAttribute="trailing" secondItem="Lim-o2-xzM" secondAttribute="trailing" constant="20" id="oap-2O-jeN"/>
+                            <constraint firstItem="Q9P-2k-a5V" firstAttribute="top" secondItem="lqW-jW-hHP" secondAttribute="top" constant="35" id="oaz-HV-uwx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lqW-jW-hHP"/>
+                    </view>
+                    <connections>
+                        <outlet property="bookSearchBar" destination="Lim-o2-xzM" id="8SO-5E-pJD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="alD-Vt-emw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-53.623188405797109" y="123.88392857142857"/>
+        </scene>
+    </scenes>
+</document>
