@@ -25,19 +25,36 @@
                                 <rect key="frame" x="20" y="130.5" width="374" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Últimas Pesquisas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNo-U2-HcV">
+                                <rect key="frame" x="20" y="206.5" width="139.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y0l-i7-evh">
+                                <rect key="frame" x="20" y="247.5" width="374" height="594.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Y0l-i7-evh" firstAttribute="top" secondItem="WNo-U2-HcV" secondAttribute="bottom" constant="20" id="4Mr-1x-jjw"/>
                             <constraint firstItem="Lim-o2-xzM" firstAttribute="leading" secondItem="lqW-jW-hHP" secondAttribute="leading" constant="20" id="D9s-bW-ojh"/>
+                            <constraint firstItem="lqW-jW-hHP" firstAttribute="bottom" secondItem="Y0l-i7-evh" secondAttribute="bottom" constant="20" id="RDy-b1-KeF"/>
+                            <constraint firstItem="Y0l-i7-evh" firstAttribute="leading" secondItem="lqW-jW-hHP" secondAttribute="leading" constant="20" id="VZJ-Lo-UqZ"/>
+                            <constraint firstItem="WNo-U2-HcV" firstAttribute="top" secondItem="Lim-o2-xzM" secondAttribute="bottom" constant="20" id="XXR-jE-3sh"/>
+                            <constraint firstItem="lqW-jW-hHP" firstAttribute="trailing" secondItem="Y0l-i7-evh" secondAttribute="trailing" constant="20" id="akc-ow-eTu"/>
                             <constraint firstItem="Q9P-2k-a5V" firstAttribute="leading" secondItem="lqW-jW-hHP" secondAttribute="leading" constant="20" id="dTb-eg-BRb"/>
                             <constraint firstItem="Lim-o2-xzM" firstAttribute="top" secondItem="Q9P-2k-a5V" secondAttribute="bottom" constant="20" id="iMx-Ib-ziE"/>
                             <constraint firstItem="lqW-jW-hHP" firstAttribute="trailing" secondItem="Lim-o2-xzM" secondAttribute="trailing" constant="20" id="oap-2O-jeN"/>
                             <constraint firstItem="Q9P-2k-a5V" firstAttribute="top" secondItem="lqW-jW-hHP" secondAttribute="top" constant="35" id="oaz-HV-uwx"/>
+                            <constraint firstItem="WNo-U2-HcV" firstAttribute="leading" secondItem="lqW-jW-hHP" secondAttribute="leading" constant="20" id="vxh-F1-cHz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lqW-jW-hHP"/>
                     </view>
                     <connections>
                         <outlet property="bookSearchBar" destination="Lim-o2-xzM" id="8SO-5E-pJD"/>
+                        <outlet property="tableView" destination="Y0l-i7-evh" id="SYI-Ql-vUh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="alD-Vt-emw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

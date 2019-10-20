@@ -6,8 +6,18 @@ target 'BookSeeker' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
+  def rxswift_pods
+    pod 'RxSwift'
+    pod 'RxCocoa'
+  end
+
+  def networking_pods
+    pod 'Alamofire', '4.8.2'
+  end
+
   def reusepods
-      pod 'Alamofire', '~> 5.0.0-rc.2'
+      networking_pods
+      rxswift_pods
   end
 
   # Pods for BookSeeker
