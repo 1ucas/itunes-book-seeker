@@ -16,6 +16,9 @@ class BookSearchViewController: BaseViewController<BookSearchViewModel, BookSeek
         self.bookSearchBar.delegate = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
+
+        self.navigationController?.navigationBar.isHidden = true
+
         bindUI()
         getLastSearches()
     }

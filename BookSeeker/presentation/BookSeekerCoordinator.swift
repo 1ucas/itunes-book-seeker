@@ -21,7 +21,7 @@ class BookSeekerCoordinator: Coordinator {
         let bookListVC = BookListViewController.instantiate(storyboardName: "BookList", bundle: Bundle.main)
         bookListVC.coordinator = self
         bookListVC.viewModel = BookListViewModel(books: books)
-        self.currentNavigationController.pushViewController(bookListVC, animated: true)
+        self.currentNavigationController.show(bookListVC, sender: self)
     }
 
 }

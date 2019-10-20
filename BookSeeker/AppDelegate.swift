@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func configureNavigation() {
 
-        navigationController.navigationBar.isHidden = true
         coordinator = BookSeekerCoordinator()
         coordinator?.start(navigationController: navigationController)
 

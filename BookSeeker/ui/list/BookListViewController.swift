@@ -14,6 +14,8 @@ class BookListViewController: BaseViewController<BookListViewModel, BookSeekerCo
         tableView.delegate = self
         tableView.dataSource = self
 
+        self.navigationController?.navigationBar.isHidden = false
+
         bindUI()
 
         viewModel.loadBooks()
@@ -34,10 +36,11 @@ extension BookListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if let cell = tableView.dequeueReusableCell(withIdentifier: BookTableViewCell.cellIdentifier) as? BookTableViewCell {
+
+        if let cell = tableView.dequeueReusableCell(withIdentifier: BookTableViewCell.cellIdentifier)
+                                                                                as? BookTableViewCell {
             let book = bookList[indexPath.row]
-            
+
             let url = URL(string: book.image)
             let data = try? Data(contentsOf: url!)
 
