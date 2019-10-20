@@ -25,6 +25,13 @@ struct BookDTO: Codable {
 extension BookDTO {
 
     func toModel() -> Book {
-        return Book(title: trackName!, author: artistName!, description: description!, image: artworkUrl60!)
+        let str = self.releaseDate
+        let formatter = ISO8601DateFormatter()
+        let releaseDate = formatter.date(from: str!)
+
+        return Book(title: trackName!, author: artistName!, description: description!,
+                    image: artworkUrl60!, price: formattedPrice, currency: currency!,
+                    kind: kind!, releaseDate: releaseDate!,
+                    rating: averageUserRating ?? 0)
     }
 }
