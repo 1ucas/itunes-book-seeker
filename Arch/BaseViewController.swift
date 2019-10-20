@@ -11,6 +11,17 @@ class BaseViewController<T:BaseViewModel>: UIViewController, Storyboarded {
     
     open override func viewDidLoad() {
         configurarLoading()
+        bindLoading()
+    }
+    
+    private func bindLoading() {
+        viewModel.showLoading.asObservable().skip(1).subscribe(onNext: {
+            self.showLoading()
+        }).disposed(by: viewModel.bag)
+        
+        viewModel.hideLoading.asObservable().skip(1).subscribe(onNext: {
+            self.hideLoading()
+        }).disposed(by: viewModel.bag)
     }
     
     private func configurarLoading() {
@@ -23,7 +34,7 @@ class BaseViewController<T:BaseViewModel>: UIViewController, Storyboarded {
         
     }
     
-    public func showLoading() {
+    private func showLoading() {
         if !showingLoading {
             present(loading, animated: false, completion: nil)
             loading.view.alpha = 1.0
@@ -34,7 +45,7 @@ class BaseViewController<T:BaseViewModel>: UIViewController, Storyboarded {
         }
     }
     
-    public func hideLoading() {
+    private func hideLoading() {
         if showingLoading {
             loading.view.alpha = 0.0
             loading.view.isUserInteractionEnabled = true

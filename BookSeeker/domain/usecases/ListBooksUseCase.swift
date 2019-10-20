@@ -4,9 +4,6 @@ class ListBooksUseCase {
 
     private let booksRepository: BookRepository = BookRepository()
 
-    public init() {
-    }
-
 }
 
 extension ListBooksUseCase {

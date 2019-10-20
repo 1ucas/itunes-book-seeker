@@ -16,16 +16,12 @@ class BookSearchViewController: BaseViewController<BookSearchViewModel> {
         self.bookSearchBar.delegate = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        getLastSearches()
         bindUI()
+        getLastSearches()
     }
 
     private func getLastSearches() {
-        if let userSearches = UserDefaults.standard.array(forKey: "searches") {
-            for search in userSearches {
-                self.userSearches.append(String.fromAny(object: search))
-            }
-        }
+        viewModel.listUserSearches()
         self.tableView.reloadData()
     }
 
@@ -34,21 +30,16 @@ class BookSearchViewController: BaseViewController<BookSearchViewModel> {
             self.recordSearch(self.bookSearchBar.text!)
             self.tableView.reloadData()
         }).disposed(by: viewModel.bag)
+
+        viewModel.searchesToDisplay.asObservable().skip(1).subscribe(onNext: { searches in
+            self.userSearches = searches
+        }).disposed(by: viewModel.bag)
     }
 
     private func recordSearch(_ text: String) {
         userSearches.insert(text, at: 0)
 
-        if let searches = UserDefaults.standard.array(forKey: "searches") {
-            var newSearches = searches
-            newSearches.insert(text, at: 0)
-            UserDefaults.standard.set(newSearches, forKey: "searches")
-            UserDefaults.standard.synchronize()
-        } else {
-            let firstSearch = [text]
-            UserDefaults.standard.set(firstSearch, forKey: "searches")
-            UserDefaults.standard.synchronize()
-        }
+        viewModel.storeUserSearches(term: text)
     }
 
 }
