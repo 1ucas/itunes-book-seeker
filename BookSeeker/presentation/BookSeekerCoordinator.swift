@@ -3,16 +3,19 @@ import UIKit
 
 class BookSeekerCoordinator: Coordinator {
 
+    var bookSeekerContainer: BookSeekerContainer!
     var currentNavigationController: UINavigationController!
 
     public init() {
+        bookSeekerContainer = BookSeekerContainer(mockSetup: false)
         // Inicializar Código de Injeção de Dependencias
     }
 
     public func start(navigationController: UINavigationController) {
         let bookSearchVC = BookSearchViewController.instantiate(storyboardName: "BookSearch", bundle: Bundle.main)
         bookSearchVC.coordinator = self
-        bookSearchVC.viewModel = BookSearchViewModel()
+
+        bookSearchVC.viewModel = bookSeekerContainer.container.resolve(BookSearchViewModel.self)
         self.currentNavigationController = navigationController
         self.currentNavigationController.pushViewController(bookSearchVC, animated: true)
     }

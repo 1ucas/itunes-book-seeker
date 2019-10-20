@@ -1,14 +1,15 @@
 import Foundation
 
-class ListBooksUseCase {
+public class ListBooksUseCase {
 
-    private let booksRepository: BookRepository = BookRepository()
+    private let booksRepository: BookRepositoryProtocol
 
-}
-
-extension ListBooksUseCase {
+    init(repository: BookRepositoryProtocol) {
+        self.booksRepository = repository
+    }
 
     func list(title: String, completion: @escaping ([Book]?, ApiErrorResponse?) -> Void) {
         booksRepository.list(title: title, completion: completion)
     }
+
 }

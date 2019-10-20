@@ -15,14 +15,19 @@ target 'BookSeeker' do
     pod 'Alamofire', '4.8.2'
   end
 
-def kingfisher_pods
-  pod 'Kingfisher', '~> 5.0'
-end
+  def kingfisher_pods
+    pod 'Kingfisher', '~> 5.0'
+  end
+
+  def dependency_injection_pods
+    pod 'Swinject'
+  end
 
   def reusepods
       networking_pods
       rxswift_pods
       kingfisher_pods
+      dependency_injection_pods
   end
 
   # Pods for BookSeeker
@@ -31,7 +36,7 @@ end
 
   target 'BookSeekerTests' do
     inherit! :search_paths
-    # Pods for testing
+    dependency_injection_pods
   end
 
   target 'BookSeekerUITests' do

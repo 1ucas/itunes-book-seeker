@@ -4,9 +4,13 @@ import RxRelay
 
 class BookSearchViewModel: BaseViewModel {
 
-    private let listBooksUseCase: ListBooksUseCase = ListBooksUseCase()
+    private let listBooksUseCase: ListBooksUseCase!
     private let storeUserSearchUseCase: StoreUserSearchUseCase = StoreUserSearchUseCase()
     private let listUserSearchUseCase: ListUserSearchUseCase = ListUserSearchUseCase()
+
+    init(listBooksUseCase: ListBooksUseCase ) {
+        self.listBooksUseCase = listBooksUseCase
+    }
 
     var booksToDisplay = BehaviorRelay<[Book]>(value: [])
 
