@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Book Detail View Controller-->
+        <!--Book Detail-->
         <scene sceneID="Etv-f8-Tx9">
             <objects>
-                <viewController storyboardIdentifier="BookDetailViewController" id="JMr-cB-Xkb" customClass="BookDetailViewController" customModule="BookSeeker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookDetailViewController" title="Book Detail" id="JMr-cB-Xkb" customClass="BookDetailViewController" customModule="BookSeeker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8fh-uf-Ahf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
