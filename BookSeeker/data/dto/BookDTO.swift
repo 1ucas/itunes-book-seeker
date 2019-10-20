@@ -4,9 +4,11 @@ struct BookDTO: Codable {
     let artistID: Int?
     let artistName: String?
     let artistViewURL: String?
-    let artworkUrl100, artworkUrl60: String?
+    let artworkUrl100: String
+    let artworkUrl60: String?
     let averageUserRating: Decimal?
-    let currency, bookDTODescription: String?
+    let currency: String?
+    let description: String?
     let fileSizeBytes: Int?
     let formattedPrice: String?
     let genreIDS: [Int]?
@@ -23,6 +25,6 @@ struct BookDTO: Codable {
 extension BookDTO {
 
     func toModel() -> Book {
-        return Book(title: trackName!)
+        return Book(title: trackName!, author: artistName!, description: description!, image: artworkUrl60!)
     }
 }

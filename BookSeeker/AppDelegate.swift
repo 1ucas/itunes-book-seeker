@@ -3,7 +3,7 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var coordinator: BookSearchCoordinator?
+    var coordinator: BookSeekerCoordinator?
     var window: UIWindow?
     var navigationController = UINavigationController()
 
@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func configureNavigation() {
 
         navigationController.navigationBar.isHidden = true
-        coordinator = BookSearchCoordinator()
+        coordinator = BookSeekerCoordinator()
         coordinator?.start(navigationController: navigationController)
 
         window = UIWindow(frame: UIScreen.main.bounds)

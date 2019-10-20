@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class BookSearchCoordinator: Coordinator {
+class BookSeekerCoordinator: Coordinator {
 
     var currentNavigationController: UINavigationController!
 
@@ -14,7 +14,14 @@ class BookSearchCoordinator: Coordinator {
         bookSearchVC.coordinator = self
         bookSearchVC.viewModel = BookSearchViewModel()
         self.currentNavigationController = navigationController
-        self.currentNavigationController.pushViewController(bookSearchVC, animated: false)
+        self.currentNavigationController.pushViewController(bookSearchVC, animated: true)
+    }
+
+    public func showBookList(books: [Book]) {
+        let bookListVC = BookListViewController.instantiate(storyboardName: "BookList", bundle: Bundle.main)
+        bookListVC.coordinator = self
+        bookListVC.viewModel = BookListViewModel(books: books)
+        self.currentNavigationController.pushViewController(bookListVC, animated: true)
     }
 
 }

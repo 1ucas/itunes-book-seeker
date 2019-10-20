@@ -1,9 +1,9 @@
 
 import UIKit
 
-class BaseViewController<T:BaseViewModel>: UIViewController, Storyboarded {
+class BaseViewController<T:BaseViewModel, V:Coordinator>: UIViewController, Storyboarded {
 
-    var coordinator: Coordinator!
+    var coordinator: V!
     var viewModel: T!
     var loading: LoadingViewController!
     

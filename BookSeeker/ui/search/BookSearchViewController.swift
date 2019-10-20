@@ -1,7 +1,7 @@
 import UIKit
 import RxSwift
 
-class BookSearchViewController: BaseViewController<BookSearchViewModel> {
+class BookSearchViewController: BaseViewController<BookSearchViewModel, BookSeekerCoordinator> {
 
     private var timer: Timer?
 
@@ -26,9 +26,9 @@ class BookSearchViewController: BaseViewController<BookSearchViewModel> {
     }
 
     private func bindUI() {
-        viewModel.booksToDisplay.asObservable().skip(1).subscribe(onNext: { [unowned self] _ in
+        viewModel.booksToDisplay.asObservable().skip(1).subscribe(onNext: { [unowned self] books in
             self.recordSearch(self.bookSearchBar.text!)
-            self.tableView.reloadData()
+            self.coordinator.showBookList(books: books)
         }).disposed(by: viewModel.bag)
 
         viewModel.searchesToDisplay.asObservable().skip(1).subscribe(onNext: { searches in
