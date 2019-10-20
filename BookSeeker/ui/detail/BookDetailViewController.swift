@@ -20,24 +20,26 @@ class BookDetailViewController: BaseViewController<BookDetailViewModel, BookSeek
     }
 
     func bindUI() {
-        let _ = viewModel.loadedBook.asObservable().skip(1).subscribe(onNext: { [unowned self] book in
-            let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
-                NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html,
-                NSAttributedString.DocumentReadingOptionKey.characterEncoding: String.Encoding.utf8.rawValue
-            ]
+        viewModel.loadedBook.asObservable().skip(1).subscribe(onNext: { [unowned self] book in
+            if let book = book {
+                let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
+                    NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html,
+                    NSAttributedString.DocumentReadingOptionKey.characterEncoding: String.Encoding.utf8.rawValue
+                ]
 
-            let attrStr = try? NSAttributedString(
-                data: (book?.description.data(using: String.Encoding.unicode, allowLossyConversion: true)!)!,
-                options: options,
-                documentAttributes: nil
-            )
+                let attrStr = try? NSAttributedString(
+                    data: (book.description.data(using: String.Encoding.unicode, allowLossyConversion: true)!),
+                    options: options,
+                    documentAttributes: nil
+                )
 
-            self.lblTitle.text = book?.title
-            self.lblAuthor.text = book?.author
-            self.lblDescription.attributedText = attrStr
-            self.lblRating.text = "\(book?.rating ?? 0)"
-            self.imgCover.kf.setImage(with: URL(string: book!.image), placeholder: UIImage(named: "AppIcon"))
-        })
+                self.lblTitle.text = book.title
+                self.lblAuthor.text = book.author
+                self.lblDescription.attributedText = attrStr
+                self.lblRating.text = "\(book.rating)"
+                self.imgCover.kf.setImage(with: URL(string: book.image), placeholder: UIImage(named: "AppIcon"))
+            }
+        }).disposed(by: viewModel.bag)
     }
 
 }
