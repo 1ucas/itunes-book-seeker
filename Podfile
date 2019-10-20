@@ -15,9 +15,14 @@ target 'BookSeeker' do
     pod 'Alamofire', '4.8.2'
   end
 
+def kingfisher_pods
+  pod 'Kingfisher', '~> 5.0'
+end
+
   def reusepods
       networking_pods
       rxswift_pods
+      kingfisher_pods
   end
 
   # Pods for BookSeeker

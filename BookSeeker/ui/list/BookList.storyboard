@@ -38,10 +38,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Qa-ig-nhU">
-                                                    <rect key="frame" x="110" y="44" width="284" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Qa-ig-nhU">
+                                                    <rect key="frame" x="110" y="39" width="284" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                    <color key="textColor" systemColor="placeholderTextColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -53,7 +53,7 @@
                                                 <constraint firstItem="buC-UU-5Rg" firstAttribute="leading" secondItem="qJa-5d-xjX" secondAttribute="trailing" constant="10" id="Syn-7n-buS"/>
                                                 <constraint firstItem="qJa-5d-xjX" firstAttribute="top" secondItem="c7f-HX-KLX" secondAttribute="top" constant="10" id="bgZ-gc-aIb"/>
                                                 <constraint firstItem="qJa-5d-xjX" firstAttribute="leading" secondItem="c7f-HX-KLX" secondAttribute="leading" constant="20" id="cds-ah-5bj"/>
-                                                <constraint firstItem="8Qa-ig-nhU" firstAttribute="top" secondItem="buC-UU-5Rg" secondAttribute="bottom" constant="10" id="gaL-ww-P4D"/>
+                                                <constraint firstItem="8Qa-ig-nhU" firstAttribute="top" secondItem="buC-UU-5Rg" secondAttribute="bottom" constant="5" id="gaL-ww-P4D"/>
                                                 <constraint firstAttribute="trailing" secondItem="buC-UU-5Rg" secondAttribute="trailing" constant="20" id="yQx-7q-0sK"/>
                                             </constraints>
                                         </tableViewCellContentView>

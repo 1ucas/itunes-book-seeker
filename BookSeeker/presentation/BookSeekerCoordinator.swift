@@ -24,4 +24,11 @@ class BookSeekerCoordinator: Coordinator {
         self.currentNavigationController.show(bookListVC, sender: self)
     }
 
+    public func showBookDetail(book: Book) {
+        let bookDetailVC = BookDetailViewController.instantiate(storyboardName: "BookDetail", bundle: Bundle.main)
+        bookDetailVC.coordinator = self
+        bookDetailVC.viewModel = BookDetailViewModel()
+        self.currentNavigationController.show(bookDetailVC, sender: self)
+    }
+
 }
