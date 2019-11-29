@@ -74,6 +74,11 @@
 		A00A0EDB235C50130041085C /* BookDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00A0EDA235C50130041085C /* BookDetailViewModel.swift */; };
 		A00A0EDC235C50130041085C /* BookDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00A0EDA235C50130041085C /* BookDetailViewModel.swift */; };
 		A00A0EDF235C504A0041085C /* BookDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00A0EDD235C504A0041085C /* BookDetail.storyboard */; };
+		A02BC6A22390CD4800C93A38 /* SearchFailedException.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02BC6A12390CD4800C93A38 /* SearchFailedException.swift */; };
+		A02BC6A32390CD4800C93A38 /* SearchFailedException.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02BC6A12390CD4800C93A38 /* SearchFailedException.swift */; };
+		A02BC6A62390CD8D00C93A38 /* UseCaseException.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02BC6A52390CD8D00C93A38 /* UseCaseException.swift */; };
+		A02BC6A72390CD8D00C93A38 /* UseCaseException.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02BC6A52390CD8D00C93A38 /* UseCaseException.swift */; };
+		A0A05ABE238E0E540078978B /* ListBooksTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A05ABD238E0E540078978B /* ListBooksTest.swift */; };
 		A0EDDD9A235CEEEA00B68CCF /* BookSeekerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EDDD99235CEEEA00B68CCF /* BookSeekerContainer.swift */; };
 		A0EDDD9B235CEEEA00B68CCF /* BookSeekerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EDDD99235CEEEA00B68CCF /* BookSeekerContainer.swift */; };
 		A0EDDD9C235CEEEA00B68CCF /* BookSeekerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EDDD99235CEEEA00B68CCF /* BookSeekerContainer.swift */; };
@@ -171,6 +176,9 @@
 		A00A0ED7235C50070041085C /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		A00A0EDA235C50130041085C /* BookDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewModel.swift; sourceTree = "<group>"; };
 		A00A0EDD235C504A0041085C /* BookDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookDetail.storyboard; sourceTree = "<group>"; };
+		A02BC6A12390CD4800C93A38 /* SearchFailedException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFailedException.swift; sourceTree = "<group>"; };
+		A02BC6A52390CD8D00C93A38 /* UseCaseException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseException.swift; sourceTree = "<group>"; };
+		A0A05ABD238E0E540078978B /* ListBooksTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBooksTest.swift; sourceTree = "<group>"; };
 		A0EDDD99235CEEEA00B68CCF /* BookSeekerContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSeekerContainer.swift; sourceTree = "<group>"; };
 		A0EDDD9D235CF04F00B68CCF /* BookRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepositoryProtocol.swift; sourceTree = "<group>"; };
 		A0EDDDA2235CF10A00B68CCF /* BookMockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMockRepository.swift; sourceTree = "<group>"; };
@@ -243,6 +251,7 @@
 		A00A0E60235B9E4F0041085C /* Arch */ = {
 			isa = PBXGroup;
 			children = (
+				A02BC6A42390CD6F00C93A38 /* exceptions */,
 				A00A0EB5235BDD9F0041085C /* utils */,
 				A00A0EA5235BD7760041085C /* networking */,
 				A00A0E8E235BC2B40041085C /* ui */,
@@ -278,6 +287,7 @@
 		A00A0E69235B9F700041085C /* usecases */ = {
 			isa = PBXGroup;
 			children = (
+				A02BC6A02390CD2600C93A38 /* exceptions */,
 				A00A0E95235BD5300041085C /* ListBooksUseCase.swift */,
 				A00A0EBC235C04F50041085C /* StoreUserSearchUseCase.swift */,
 				A00A0EC4235C06DF0041085C /* ListUserSearchUseCase.swift */,
@@ -402,6 +412,22 @@
 			path = components;
 			sourceTree = "<group>";
 		};
+		A02BC6A02390CD2600C93A38 /* exceptions */ = {
+			isa = PBXGroup;
+			children = (
+				A02BC6A12390CD4800C93A38 /* SearchFailedException.swift */,
+			);
+			path = exceptions;
+			sourceTree = "<group>";
+		};
+		A02BC6A42390CD6F00C93A38 /* exceptions */ = {
+			isa = PBXGroup;
+			children = (
+				A02BC6A52390CD8D00C93A38 /* UseCaseException.swift */,
+			);
+			path = exceptions;
+			sourceTree = "<group>";
+		};
 		A0EDDD98235CEED000B68CCF /* di */ = {
 			isa = PBXGroup;
 			children = (
@@ -463,6 +489,7 @@
 				A0EDDDA1235CF0DE00B68CCF /* Mocks */,
 				B1B751FC233D28D8002C83F2 /* Info.plist */,
 				A0EDDDA6235CF2AC00B68CCF /* ListBooksUseCaseTest.swift */,
+				A0A05ABD238E0E540078978B /* ListBooksTest.swift */,
 			);
 			path = BookSeekerTests;
 			sourceTree = "<group>";
@@ -772,6 +799,7 @@
 				A00A0ECC235C27010041085C /* BookListViewModel.swift in Sources */,
 				A0EDDD9E235CF04F00B68CCF /* BookRepositoryProtocol.swift in Sources */,
 				A00A0E9F235BD62B0041085C /* BookDTO.swift in Sources */,
+				A02BC6A62390CD8D00C93A38 /* UseCaseException.swift in Sources */,
 				A00A0E64235B9EAC0041085C /* BaseViewModel.swift in Sources */,
 				A00A0EA7235BD7890041085C /* ApiErrorResponse.swift in Sources */,
 				A00A0E62235B9E7C0041085C /* BaseViewController.swift in Sources */,
@@ -788,6 +816,7 @@
 				A0EDDDA3235CF10A00B68CCF /* BookMockRepository.swift in Sources */,
 				A00A0EA2235BD6400041085C /* Book.swift in Sources */,
 				A00A0EC1235C05B00041085C /* SearchRepository.swift in Sources */,
+				A02BC6A22390CD4800C93A38 /* SearchFailedException.swift in Sources */,
 				A00A0E73235BA09C0041085C /* BookSearchViewModel.swift in Sources */,
 				A00A0EC5235C06DF0041085C /* ListUserSearchUseCase.swift in Sources */,
 				A00A0ED4235C32E10041085C /* BookTableViewCell.swift in Sources */,
@@ -800,16 +829,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A02BC6A32390CD4800C93A38 /* SearchFailedException.swift in Sources */,
 				A0EDDDA4235CF10A00B68CCF /* BookMockRepository.swift in Sources */,
 				A0EDDDA8235CF93000B68CCF /* StringUtils.swift in Sources */,
 				A0EDDDAE235CF94500B68CCF /* BaseViewModel.swift in Sources */,
 				A0EDDDAB235CF93B00B68CCF /* LoadingViewController.swift in Sources */,
 				A0EDDD9F235CF04F00B68CCF /* BookRepositoryProtocol.swift in Sources */,
 				A0EDDDAF235CF94700B68CCF /* Coodinator.swift in Sources */,
+				A02BC6A72390CD8D00C93A38 /* UseCaseException.swift in Sources */,
 				A0EDDDB3235CF95800B68CCF /* ListBooksRequest.swift in Sources */,
 				A0EDDDC0235CF98C00B68CCF /* BookSearchViewModel.swift in Sources */,
 				A00A0EA3235BD6400041085C /* Book.swift in Sources */,
 				A0EDDD9B235CEEEA00B68CCF /* BookSeekerContainer.swift in Sources */,
+				A0A05ABE238E0E540078978B /* ListBooksTest.swift in Sources */,
 				A0EDDDB1235CF94F00B68CCF /* BookSeekerCoordinator.swift in Sources */,
 				A00A0EBE235C04F50041085C /* StoreUserSearchUseCase.swift in Sources */,
 				A00A0E97235BD5300041085C /* ListBooksUseCase.swift in Sources */,
@@ -1015,6 +1047,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0043A0DA9B201F3B8E554D5F /* Pods-BookSeeker.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XCKQJC262X;
@@ -1034,6 +1067,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 31B8D881FA8E490F13BFE945 /* Pods-BookSeeker.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XCKQJC262X;
@@ -1053,7 +1087,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 30CCE24FC0F04856C4A4D9F1 /* Pods-BookSeekerTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BookSeekerTests/Info.plist;
@@ -1075,7 +1109,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 81DAC13EAF88A98321EF9729 /* Pods-BookSeekerTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BookSeekerTests/Info.plist;
@@ -1097,7 +1131,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D4F46FFADC34FE9B6D6D877F /* Pods-BookSeekerUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BookSeekerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1117,7 +1151,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 11E20DD3E47A9E52E9AC22DE /* Pods-BookSeekerUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BookSeekerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

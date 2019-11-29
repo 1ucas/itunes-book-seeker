@@ -9,7 +9,13 @@ public class ListBooksUseCase {
     }
 
     func list(title: String, completion: @escaping ([Book]?, ApiErrorResponse?) -> Void) {
-        booksRepository.list(title: title, completion: completion)
+        booksRepository.list(title: title, completion: { lista, apiError in
+            
+            if let apiError = apiError {
+                completion(nil, SearchFailedException()
+            }
+        
+        })
     }
 
 }

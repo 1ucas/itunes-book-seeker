@@ -30,17 +30,25 @@ target 'BookSeeker' do
       dependency_injection_pods
   end
 
+  def test_pods
+    pod 'Quick'
+    pod 'Nimble'
+  end
+  
+
   # Pods for BookSeeker
   reusepods
   pod 'SwiftLint', '~> 0.33'
 
   target 'BookSeekerTests' do
     inherit! :search_paths
+    test_pods
     dependency_injection_pods
   end
 
   target 'BookSeekerUITests' do
     inherit! :search_paths
+    test_pods
     reusepods
   end
 
