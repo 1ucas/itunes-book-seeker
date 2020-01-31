@@ -1,3 +1,3 @@
 import Foundation
 
-class SearchFailedException : UseCaseException{ }
+class SearchFailedException: UseCaseException { }

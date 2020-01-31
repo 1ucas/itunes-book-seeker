@@ -43,7 +43,6 @@ target 'BookSeeker' do
   target 'BookSeekerTests' do
     inherit! :search_paths
     test_pods
-    dependency_injection_pods
   end
 
   target 'BookSeekerUITests' do
