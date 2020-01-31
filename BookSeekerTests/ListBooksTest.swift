@@ -6,10 +6,10 @@ class ListBooksTest: QuickSpec {
 
     var booksContainer: Container!
     var useCase: ListBooksUseCase!
-    
+
     override func spec() {
         describe("Pesqusia de Livro") {
-            
+
             beforeEach {
                 self.booksContainer = BookSeekerContainer(mockSetup: true).container
                 self.useCase = self.booksContainer.resolve(ListBooksUseCase.self)
@@ -31,7 +31,6 @@ class ListBooksTest: QuickSpec {
                 context("Quando a lista é retornada com erro") {
 
                     it("Então deve ser retornada uma exception de caso de uso") {
-                        
                     }
                 }
             }
