@@ -574,7 +574,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
-				ORGANIZATIONNAME = CIT;
+				ORGANIZATIONNAME = LUCASRM;
 				TargetAttributes = {
 					B1B751DF233D28D6002C83F2 = {
 						CreatedOnToolsVersion = 11.0;

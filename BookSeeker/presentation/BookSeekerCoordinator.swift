@@ -4,7 +4,7 @@ import UIKit
 class BookSeekerCoordinator: Coordinator {
 
     var bookSeekerContainer: BookSeekerContainer!
-    var currentNavigationController: UINavigationController!
+    private var currentNavigationController: UINavigationController!
 
     public init() {
         bookSeekerContainer = BookSeekerContainer(mockSetup: false)

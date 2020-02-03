@@ -1,11 +1,3 @@
-//
-//  BookSeekerUITests.swift
-//  BookSeekerUITests
-//
-//  Created by Teobaldo Mauro de Moura on 26/09/19.
-//  Copyright © 2019 CIT. All rights reserved.
-//
-
 import XCTest
 
 class BookSeekerUITests: XCTestCase {
