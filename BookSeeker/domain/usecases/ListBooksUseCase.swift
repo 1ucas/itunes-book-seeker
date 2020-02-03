@@ -12,7 +12,9 @@ public class ListBooksUseCase {
         booksRepository.list(title: title, completion: { lista, apiError in
 
             if let apiError = apiError {
-                completion(lista, apiError)
+                completion(nil, apiError)
+            } else {
+                completion(lista, nil)
             }
 
         })
