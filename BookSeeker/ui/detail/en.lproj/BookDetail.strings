@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "Author"; ObjectID = "4Zy-Gf-rvI"; */
+"4Zy-Gf-rvI.text" = "Author";
+
+/* Class = "UIViewController"; title = "Book Detail"; ObjectID = "JMr-cB-Xkb"; */
+"JMr-cB-Xkb.title" = "Book Detail";
+
+/* Class = "UILabel"; text = "User Rating: "; ObjectID = "XAv-po-ehx"; */
+"XAv-po-ehx.text" = "User Rating: ";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "b0f-un-oiL"; */
+"b0f-un-oiL.text" = "Title";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "iI3-10-rjr"; */
+"iI3-10-rjr.text" = "Description";
+
+/* Class = "UILabel"; text = "Cover"; ObjectID = "iJc-Bj-B9A"; */
+"iJc-Bj-B9A.text" = "Cover";
