@@ -12,7 +12,7 @@ class BookSeekerCoordinator: Coordinator {
     }
 
     public func start(navigationController: UINavigationController) {
-        let bookSearchVC = BookSearchViewController.instantiate(storyboardName: "BookSearch", bundle: Bundle.main)
+        let bookSearchVC = BookSearchViewController.instantiate()
         bookSearchVC.coordinator = self
 
         bookSearchVC.viewModel = bookSeekerContainer.container.resolve(BookSearchViewModel.self)
@@ -21,14 +21,14 @@ class BookSeekerCoordinator: Coordinator {
     }
 
     public func showBookList(books: [Book]) {
-        let bookListVC = BookListViewController.instantiate(storyboardName: "BookList", bundle: Bundle.main)
+        let bookListVC = BookListViewController.instantiate()
         bookListVC.coordinator = self
         bookListVC.viewModel = BookListViewModel(books: books)
         self.currentNavigationController.show(bookListVC, sender: self)
     }
 
     public func showBookDetail(book: Book) {
-        let bookDetailVC = BookDetailViewController.instantiate(storyboardName: "BookDetail", bundle: Bundle.main)
+        let bookDetailVC = BookDetailViewController.instantiate()
         bookDetailVC.coordinator = self
         bookDetailVC.viewModel = BookDetailViewModel()
         bookDetailVC.viewModel.book = book
