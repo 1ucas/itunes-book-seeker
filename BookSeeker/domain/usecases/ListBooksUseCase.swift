@@ -1,6 +1,6 @@
 import Foundation
 
-public class ListBooksUseCase {
+public class ListBooksUseCase: ListBooksUseCaseProtocol {
 
     private let booksRepository: BookRepositoryProtocol
 
@@ -8,7 +8,7 @@ public class ListBooksUseCase {
         self.booksRepository = repository
     }
 
-    func list(title: String, completion: @escaping ([Book]?, ApiErrorResponse?) -> Void) {
+    public func list(title: String, completion: @escaping ([Book]?, ApiErrorResponse?) -> Void) {
         booksRepository.list(title: title, completion: { lista, apiError in
 
             if let apiError = apiError {
