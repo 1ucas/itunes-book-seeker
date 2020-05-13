@@ -15,9 +15,11 @@ class BookRepositoryTest: QuickSpec {
     override func spec() {
         do {
             self.server = HttpServer()
+            
             let jsonEncoder = JSONEncoder()
             let data = try jsonEncoder.encode(BookMocks.resultadoComUmLivro)
             let dataString = String(data: data, encoding: .utf8)
+            
             self.server["/search"] = { _ in .ok(.text(dataString!))  }
             try self.server.start()
             
