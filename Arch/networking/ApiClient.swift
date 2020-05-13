@@ -3,8 +3,6 @@ import Alamofire
 
 class ApiClient: NSObject {
     
-    private let BASE_URL = "https://itunes.apple.com/"
-    
     public static let instance = ApiClient()
     
     private var sessionManager: SessionManager?
@@ -17,7 +15,7 @@ extension ApiClient {
     
     func execute<T>(returnModel: T.Type, request: Requestable, completion: @escaping (T?, ApiErrorResponse?) -> Void) where T : Codable {
         
-        let url = "\(BASE_URL)\(request.url)"
+        let url = "\(Ambiente.BASE_URL)\(request.url)"
         
         sessionManager = Alamofire.SessionManager.default
         
@@ -45,6 +43,5 @@ extension ApiClient {
             }
         }
     }
-    
 }
 

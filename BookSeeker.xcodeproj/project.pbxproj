@@ -78,6 +78,9 @@
 		A02BC6A32390CD4800C93A38 /* SearchFailedException.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02BC6A12390CD4800C93A38 /* SearchFailedException.swift */; };
 		A02BC6A62390CD8D00C93A38 /* UseCaseException.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02BC6A52390CD8D00C93A38 /* UseCaseException.swift */; };
 		A02BC6A72390CD8D00C93A38 /* UseCaseException.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02BC6A52390CD8D00C93A38 /* UseCaseException.swift */; };
+		A02F45CA246B15C800A64BF8 /* Ambiente.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F45C9246B15C800A64BF8 /* Ambiente.swift */; };
+		A02F45CB246B15C800A64BF8 /* Ambiente.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F45C9246B15C800A64BF8 /* Ambiente.swift */; };
+		A02F45CC246B15C800A64BF8 /* Ambiente.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F45C9246B15C800A64BF8 /* Ambiente.swift */; };
 		A064113B2469EF0100147959 /* BookSearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A064113A2469EF0100147959 /* BookSearchViewModelTests.swift */; };
 		A064113E2469F43300147959 /* ListBooksUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A064113D2469F43300147959 /* ListBooksUseCaseProtocol.swift */; };
 		A064113F2469F43300147959 /* ListBooksUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A064113D2469F43300147959 /* ListBooksUseCaseProtocol.swift */; };
@@ -187,6 +190,7 @@
 		A00A0EDD235C504A0041085C /* BookDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookDetail.storyboard; sourceTree = "<group>"; };
 		A02BC6A12390CD4800C93A38 /* SearchFailedException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFailedException.swift; sourceTree = "<group>"; };
 		A02BC6A52390CD8D00C93A38 /* UseCaseException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseException.swift; sourceTree = "<group>"; };
+		A02F45C9246B15C800A64BF8 /* Ambiente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ambiente.swift; sourceTree = "<group>"; };
 		A064113A2469EF0100147959 /* BookSearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchViewModelTests.swift; sourceTree = "<group>"; };
 		A064113D2469F43300147959 /* ListBooksUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBooksUseCaseProtocol.swift; sourceTree = "<group>"; };
 		A06411412469F50300147959 /* ListBooksMockUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBooksMockUseCase.swift; sourceTree = "<group>"; };
@@ -273,6 +277,7 @@
 				A00A0E63235B9EAC0041085C /* BaseViewModel.swift */,
 				A00A0E88235BA51E0041085C /* Coodinator.swift */,
 				A00A0E8B235BA64E0041085C /* Storyboarded.swift */,
+				A02F45C9246B15C800A64BF8 /* Ambiente.swift */,
 			);
 			path = Arch;
 			sourceTree = "<group>";
@@ -873,6 +878,7 @@
 				A00A0E73235BA09C0041085C /* BookSearchViewModel.swift in Sources */,
 				A00A0EC5235C06DF0041085C /* ListUserSearchUseCase.swift in Sources */,
 				A00A0ED4235C32E10041085C /* BookTableViewCell.swift in Sources */,
+				A02F45CA246B15C800A64BF8 /* Ambiente.swift in Sources */,
 				A00A0EAB235BD84B0041085C /* ApiClient.swift in Sources */,
 				A00A0EDB235C50130041085C /* BookDetailViewModel.swift in Sources */,
 			);
@@ -920,6 +926,7 @@
 				A0EDDDB7235CF97300B68CCF /* BookTableViewCell.swift in Sources */,
 				A00A0EC6235C06DF0041085C /* ListUserSearchUseCase.swift in Sources */,
 				A0EDDDB9235CF97800B68CCF /* BookDetailViewModel.swift in Sources */,
+				A02F45CB246B15C800A64BF8 /* Ambiente.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -959,6 +966,7 @@
 				A00A0EAC235BD84B0041085C /* ApiClient.swift in Sources */,
 				A00A0EC3235C05B00041085C /* SearchRepository.swift in Sources */,
 				A00A0ECA235C11350041085C /* BookListViewController.swift in Sources */,
+				A02F45CC246B15C800A64BF8 /* Ambiente.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,4 +14,7 @@ public class BookMocks {
     
     static var listaComDois = [livroDog, livroTeste]
     
+    static var listaComUmJSON = [BookDTO(artistID: 100, artistName: "Lucas", artistViewURL: "https://url", artworkUrl100: "", artworkUrl60: "", averageUserRating: 5.0, currency: "R$", description: "Descrição", fileSizeBytes: nil, formattedPrice: "R$5.30", genreIDS: nil, genres: nil, kind: "Tipo", price: 5.0, releaseDate: "2010-04-27T07:00:00z", trackCensoredName: "", trackID: 1123, trackName: "", trackViewURL: "", userRatingCount: 23)]
+    
+    static var resultadoComUmLivro = ItunesSearchResponse(resultCount: 1, results: listaComUmJSON)
 }

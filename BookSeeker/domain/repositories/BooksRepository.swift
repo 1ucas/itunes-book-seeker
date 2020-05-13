@@ -8,6 +8,7 @@ class BookRepository {
 }
 
 extension BookRepository: BookRepositoryProtocol {
+    
     func list(title: String, completion: @escaping ([Book]?, ApiErrorResponse?) -> Void ) {
         var request = ListBooksRequest()
         request.url = request.url.setUrlParameter("title", title)
