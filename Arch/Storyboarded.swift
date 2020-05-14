@@ -7,7 +7,7 @@ protocol Storyboarded {
     static func instantiate<V: BaseViewModel, C: Coordinator>(viewModel: V, coordinator: C) -> Self
 }
 
-extension Storyboarded where Self: BaseViewControllerProtocol {
+extension Storyboarded where Self: UIViewController {
     static var identifier: String {
         String(describing: self)
     }
@@ -20,7 +20,9 @@ extension Storyboarded where Self: BaseViewControllerProtocol {
     }
     
     static func instantiate<V: BaseViewModel, C: Coordinator>(viewModel: V, coordinator: C) -> Self {
-        let viewController = storyboard.instantiateViewController(withIdentifier: identifier) as! BaseViewController<V, C>
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: identifier) as? BaseViewController<V, C> else {
+            fatalError("Failed to instantiate \(identifier)<\(String(describing: viewModel)), \(String(describing: coordinator))>")
+        }
         viewController.viewModel = viewModel
         viewController.coordinator = coordinator
         

@@ -1,14 +1,7 @@
 
 import UIKit
 
-protocol BaseViewControllerProtocol: UIViewController {
-    func bindLoading()
-    func configurarLoading()
-    func showLoading()
-    func hideLoading()
-}
-
-class BaseViewController<T:BaseViewModel, V:Coordinator>: UIViewController, BaseViewControllerProtocol, Storyboarded {
+class BaseViewController<T:BaseViewModel, V:Coordinator>: UIViewController, Storyboarded {
     
     var coordinator: V!
     var viewModel: T!
