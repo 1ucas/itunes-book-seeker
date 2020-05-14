@@ -2,7 +2,7 @@
 import UIKit
 
 class BaseViewController<T:BaseViewModel, V:Coordinator>: UIViewController, Storyboarded {
-    
+
     var coordinator: V!
     var viewModel: T!
     var loading: LoadingViewController!
@@ -14,7 +14,7 @@ class BaseViewController<T:BaseViewModel, V:Coordinator>: UIViewController, Stor
         bindLoading()
     }
     
-    internal func bindLoading() {
+    private func bindLoading() {
         viewModel.showLoading.asObservable().skip(1).subscribe(onNext: {
             self.showLoading()
         }).disposed(by: viewModel.bag)
@@ -24,7 +24,7 @@ class BaseViewController<T:BaseViewModel, V:Coordinator>: UIViewController, Stor
         }).disposed(by: viewModel.bag)
     }
     
-    internal func configurarLoading() {
+    private func configurarLoading() {
         let storyboard = UIStoryboard(name: "Loading", bundle: Bundle(for: BaseViewController.self))
         loading = storyboard.instantiateViewController(withIdentifier: "LoadingViewController") as? LoadingViewController
         loading.view.alpha = 0.0
@@ -34,7 +34,7 @@ class BaseViewController<T:BaseViewModel, V:Coordinator>: UIViewController, Stor
         
     }
     
-    internal func showLoading() {
+    private func showLoading() {
         if !showingLoading {
             present(loading, animated: false, completion: nil)
             loading.view.alpha = 1.0
@@ -45,7 +45,7 @@ class BaseViewController<T:BaseViewModel, V:Coordinator>: UIViewController, Stor
         }
     }
     
-    internal func hideLoading() {
+    private func hideLoading() {
         if showingLoading {
             loading.view.alpha = 0.0
             loading.view.isUserInteractionEnabled = true
