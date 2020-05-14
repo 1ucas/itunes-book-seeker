@@ -11,7 +11,7 @@ class ListBooksTest: QuickSpec {
         describe("Pesqusia de Livro") {
 
             beforeEach {
-                self.booksContainer = BookSeekerContainer(mockSetup: true).container
+                self.booksContainer = BookSeekerContainer(mockRepository: true).container
                 self.useCase = self.booksContainer.resolve(ListBooksUseCase.self)
             }
 
