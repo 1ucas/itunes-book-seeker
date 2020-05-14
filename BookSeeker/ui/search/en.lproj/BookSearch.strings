@@ -1,0 +1,9 @@
+
+/* Class = "UIViewController"; title = "Book Search"; ObjectID = "AB3-JA-qsx"; */
+"AB3-JA-qsx.title" = "Book Search";
+
+/* Class = "UILabel"; text = "Search"; ObjectID = "Q9P-2k-a5V"; */
+"Q9P-2k-a5V.text" = "Search";
+
+/* Class = "UILabel"; text = "Últimas Pesquisas"; ObjectID = "WNo-U2-HcV"; */
+"WNo-U2-HcV.text" = "Last Searches";

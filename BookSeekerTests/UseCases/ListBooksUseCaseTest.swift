@@ -8,7 +8,7 @@ class ListBooksUseCaseTest: XCTestCase {
     var useCase: ListBooksUseCase!
 
     override func setUp() {
-        bookSeekerContainer = BookSeekerContainer(mockSetup: true).container
+        bookSeekerContainer = BookSeekerContainer(mockRepository: true).container
         useCase = bookSeekerContainer.resolve(ListBooksUseCase.self)
     }
 

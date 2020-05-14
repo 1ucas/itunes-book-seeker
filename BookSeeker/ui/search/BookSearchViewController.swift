@@ -12,20 +12,20 @@ class BookSearchViewController: BaseViewController<BookSearchViewModel, BookSeek
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupUI()
+        bindUI()
+        
+        getLastSearches()
+    }
+    
+    private func setupUI() {
         self.bookSearchBar.searchBarStyle = .minimal
         self.bookSearchBar.delegate = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
 
         self.navigationController?.navigationBar.isHidden = true
-
-        bindUI()
-        getLastSearches()
-    }
-
-    private func getLastSearches() {
-        viewModel.listUserSearches()
-        self.tableView.reloadData()
     }
 
     private func bindUI() {
@@ -37,6 +37,11 @@ class BookSearchViewController: BaseViewController<BookSearchViewModel, BookSeek
         viewModel.searchesToDisplay.asObservable().skip(1).subscribe(onNext: { searches in
             self.userSearches = searches
         }).disposed(by: viewModel.bag)
+    }
+
+    private func getLastSearches() {
+        viewModel.listUserSearches()
+        self.tableView.reloadData()
     }
 
     private func recordSearch(_ text: String) {

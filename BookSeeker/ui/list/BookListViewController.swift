@@ -12,16 +12,19 @@ class BookListViewController: BaseViewController<BookListViewModel, BookSeekerCo
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.delegate = self
-        tableView.dataSource = self
-
-        self.navigationController?.navigationBar.isHidden = false
-
+        setupUI()
         bindUI()
 
         viewModel.loadBooks()
     }
 
+    private func setupUI() {
+        tableView.delegate = self
+        tableView.dataSource = self
+
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
     private func bindUI() {
         viewModel.booksToDisplay.asObservable().skip(1).subscribe(onNext: { [unowned self] books in
             self.bookList = books
