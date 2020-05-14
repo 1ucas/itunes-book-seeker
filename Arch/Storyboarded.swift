@@ -1,16 +1,29 @@
 
 import UIKit
 
-public protocol Storyboarded {
-    static func instantiate() -> Self
+protocol Storyboarded {
+    static var identifiable: String { get }
+    static var storyboard: UIStoryboard { get }
+    static func instantiate<V: BaseViewModel, C: Coordinator>(viewModel: V, coordinator: C) -> Self
 }
 
-public extension Storyboarded where Self: UIViewController {
-    static func instantiate() -> Self {
-        let id = String(describing: self)
-        let storyboardName = id.replacingOccurrences(of: "ViewController", with: "")
+extension Storyboarded where Self: BaseViewControllerProtocol {
+    static var identifiable: String {
+        String(describing: self)
+    }
+    
+    static var storyboard: UIStoryboard {
+        let storyboardName = identifiable.replacingOccurrences(of: "ViewController", with: "")
         let bundle = Bundle(for: self)
-        let storyboard = UIStoryboard(name: storyboardName, bundle: bundle)
-        return storyboard.instantiateViewController(withIdentifier: id) as! Self
+        
+        return UIStoryboard(name: storyboardName, bundle: bundle)
+    }
+    
+    static func instantiate<V: BaseViewModel, C: Coordinator>(viewModel: V, coordinator: C) -> Self {
+        let viewController = storyboard.instantiateViewController(withIdentifier: identifiable) as! BaseViewController<V, C>
+        viewController.viewModel = viewModel
+        viewController.coordinator = coordinator
+        
+        return viewController as! Self
     }
 }

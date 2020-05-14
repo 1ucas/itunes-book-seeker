@@ -8,7 +8,7 @@ class BookSearchViewModel: BaseViewModel {
     private let storeUserSearchUseCase: StoreUserSearchUseCase = StoreUserSearchUseCase()
     private let listUserSearchUseCase: ListUserSearchUseCase = ListUserSearchUseCase()
 
-    init(listBooksUseCase: ListBooksUseCaseProtocol ) {
+    init(listBooksUseCase: ListBooksUseCaseProtocol) {
         self.listBooksUseCase = listBooksUseCase
     }
 

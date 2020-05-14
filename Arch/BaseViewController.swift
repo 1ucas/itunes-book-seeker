@@ -1,8 +1,15 @@
 
 import UIKit
 
-class BaseViewController<T:BaseViewModel, V:Coordinator>: UIViewController, Storyboarded {
+protocol BaseViewControllerProtocol: UIViewController {
+    func bindLoading()
+    func configurarLoading()
+    func showLoading()
+    func hideLoading()
+}
 
+class BaseViewController<T:BaseViewModel, V:Coordinator>: UIViewController, BaseViewControllerProtocol, Storyboarded {
+    
     var coordinator: V!
     var viewModel: T!
     var loading: LoadingViewController!
@@ -14,7 +21,7 @@ class BaseViewController<T:BaseViewModel, V:Coordinator>: UIViewController, Stor
         bindLoading()
     }
     
-    private func bindLoading() {
+    internal func bindLoading() {
         viewModel.showLoading.asObservable().skip(1).subscribe(onNext: {
             self.showLoading()
         }).disposed(by: viewModel.bag)
@@ -24,7 +31,7 @@ class BaseViewController<T:BaseViewModel, V:Coordinator>: UIViewController, Stor
         }).disposed(by: viewModel.bag)
     }
     
-    private func configurarLoading() {
+    internal func configurarLoading() {
         let storyboard = UIStoryboard(name: "Loading", bundle: Bundle(for: BaseViewController.self))
         loading = storyboard.instantiateViewController(withIdentifier: "LoadingViewController") as? LoadingViewController
         loading.view.alpha = 0.0
@@ -34,7 +41,7 @@ class BaseViewController<T:BaseViewModel, V:Coordinator>: UIViewController, Stor
         
     }
     
-    private func showLoading() {
+    internal func showLoading() {
         if !showingLoading {
             present(loading, animated: false, completion: nil)
             loading.view.alpha = 1.0
@@ -45,7 +52,7 @@ class BaseViewController<T:BaseViewModel, V:Coordinator>: UIViewController, Stor
         }
     }
     
-    private func hideLoading() {
+    internal func hideLoading() {
         if showingLoading {
             loading.view.alpha = 0.0
             loading.view.isUserInteractionEnabled = true
