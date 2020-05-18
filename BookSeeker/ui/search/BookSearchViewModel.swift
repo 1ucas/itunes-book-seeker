@@ -36,10 +36,24 @@ class BookSearchViewModel: BaseViewModel {
         showLoading.accept(())
         listUserSearchUseCase.list(completion: { searches in
             self.hideLoading.accept(())
-            self.searchesToDisplay.accept(searches)
+            let buscarFiltradas = self.filtrarPalavrasProibidas(searches: searches)
+            let buscarFiltradasV2 = self.filtrarBatata(searches: buscarFiltradas)
+            self.searchesToDisplay.accept(buscarFiltradasV2)
         })
     }
+    
+    private func filtrarPalavrasProibidas(searches: [String]) -> [String] {
+        return searches.filter { palavra -> Bool in
+            return palavra != "Lucas"
+        }
+    }
 
+    private func filtrarBatata(searches: [String]) -> [String] {
+        return searches.filter { palavra -> Bool in
+            return palavra != "Batata"
+        }
+    }
+    
     func storeUserSearches(term: String) {
         showLoading.accept(())
         storeUserSearchUseCase.store(term: term, completion: { _ in
