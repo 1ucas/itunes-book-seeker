@@ -18,7 +18,7 @@ class ListBooksUseCaseTest: XCTestCase {
     }
 
     func testUseCaseWithSuccess() {
-        useCase?.list(title: "Dog", completion: { books, error in
+        useCase?.execute(input: "Dog", completion: { books, error in
             XCTAssertNotNil(books)
             XCTAssertNil(error)
             XCTAssertEqual(books?.count, 1)
@@ -26,7 +26,7 @@ class ListBooksUseCaseTest: XCTestCase {
     }
 
     func testUseCaseWithApiError() {
-        useCase?.list(title: "Lucas", completion: { books, error in
+        useCase?.execute(input: "Lucas", completion: { books, error in
             XCTAssertNotNil(error)
             XCTAssertNil(books)
         })

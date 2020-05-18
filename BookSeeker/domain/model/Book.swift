@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Book : Codable {
+public struct Book: Codable {
     var title: String
     var author: String
     var description: String

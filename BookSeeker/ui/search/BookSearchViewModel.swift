@@ -4,11 +4,11 @@ import RxRelay
 
 class BookSearchViewModel: BaseViewModel {
 
-    private let listBooksUseCase: ListBooksUseCaseProtocol!
+    private let listBooksUseCase: ListBooksUseCase
     private let storeUserSearchUseCase: StoreUserSearchUseCase = StoreUserSearchUseCase()
     private let listUserSearchUseCase: ListUserSearchUseCase = ListUserSearchUseCase()
 
-    init(listBooksUseCase: ListBooksUseCaseProtocol) {
+    init(listBooksUseCase: ListBooksUseCase) {
         self.listBooksUseCase = listBooksUseCase
     }
 
@@ -20,7 +20,7 @@ class BookSearchViewModel: BaseViewModel {
 
     func listBooks(title: String) {
         showLoading.accept(())
-        listBooksUseCase.list(title: title, completion: { bookList, error in
+        listBooksUseCase.execute(input: title, completion: { bookList, error in
             if let bookList = bookList {
                 self.booksToDisplay.accept(bookList)
             } else {
@@ -47,13 +47,13 @@ class BookSearchViewModel: BaseViewModel {
             return palavra != "Lucas"
         }
     }
-    
+
     private func filtrarBatata(searches: [String]) -> [String] {
         return searches.filter { palavra -> Bool in
             return palavra != "Batata"
         }
     }
-
+    
     func storeUserSearches(term: String) {
         showLoading.accept(())
         storeUserSearchUseCase.store(term: term, completion: { _ in

@@ -20,7 +20,7 @@ class ListBooksTest: QuickSpec {
                 context("Quando a lista é retornada com sucessso") {
 
                     it("Então deve retornar uma lista de livros") {
-                        self.useCase?.list(title: "Dog", completion: { books, error in
+                        self.useCase?.execute(input: "Dog", completion: { books, error in
                             expect(books).toNot(beNil())
                             expect(error).to(beNil())
                             expect(books?.count).to(equal(1))
