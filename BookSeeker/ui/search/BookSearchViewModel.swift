@@ -4,7 +4,7 @@ import RxRelay
 
 class BookSearchViewModel: BaseViewModel {
 
-    private var listBooksUseCase: ListBooksUseCase
+    private let listBooksUseCase: ListBooksUseCase
     private let storeUserSearchUseCase: StoreUserSearchUseCase = StoreUserSearchUseCase()
     private let listUserSearchUseCase: ListUserSearchUseCase = ListUserSearchUseCase()
 
