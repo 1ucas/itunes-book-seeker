@@ -1,6 +1,4 @@
 import Foundation
 
-public protocol ListBooksUseCaseProtocol {
-
-    func list(title: String, completion: @escaping ([Book]?, ApiErrorResponse?) -> Void)
+public protocol ListBooksUseCaseProtocol: UseCaseProtocol where InputType == String, OutputType == [Book]? {
 }

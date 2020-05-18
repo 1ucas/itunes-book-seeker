@@ -122,6 +122,9 @@
 		B1B751ED233D28D8002C83F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1B751EC233D28D8002C83F2 /* Assets.xcassets */; };
 		B1B751F0233D28D8002C83F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1B751EE233D28D8002C83F2 /* LaunchScreen.storyboard */; };
 		B1B75206233D28D9002C83F2 /* BookSeekerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B75205233D28D9002C83F2 /* BookSeekerUITests.swift */; };
+		B4A3B5932472ACA5000A07C1 /* UseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A3B5922472ACA5000A07C1 /* UseCaseProtocol.swift */; };
+		B4A3B5942472B924000A07C1 /* UseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A3B5922472ACA5000A07C1 /* UseCaseProtocol.swift */; };
+		B4A3B5952472B924000A07C1 /* UseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A3B5922472ACA5000A07C1 /* UseCaseProtocol.swift */; };
 		B4E80B4B2469CAAC0082D04E /* BookSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E80B4F2469CAAC0082D04E /* BookSearch.storyboard */; };
 		B4E80B4C2469CAAC0082D04E /* BookSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E80B4F2469CAAC0082D04E /* BookSearch.storyboard */; };
 		B4E80B4D2469CAAC0082D04E /* BookSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E80B4F2469CAAC0082D04E /* BookSearch.storyboard */; };
@@ -208,6 +211,7 @@
 		B1B75201233D28D9002C83F2 /* BookSeekerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookSeekerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1B75205233D28D9002C83F2 /* BookSeekerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSeekerUITests.swift; sourceTree = "<group>"; };
 		B1B75207233D28D9002C83F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4A3B5922472ACA5000A07C1 /* UseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProtocol.swift; sourceTree = "<group>"; };
 		B4E80B4E2469CAAC0082D04E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/BookSearch.storyboard; sourceTree = "<group>"; };
 		B4E80B512469CAB10082D04E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BookSearch.strings; sourceTree = "<group>"; };
 		B4E80B532469CAB20082D04E /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/BookSearch.strings"; sourceTree = "<group>"; };
@@ -284,6 +288,7 @@
 				A00A0E88235BA51E0041085C /* Coodinator.swift */,
 				A00A0E8B235BA64E0041085C /* Storyboarded.swift */,
 				A02F45C9246B15C800A64BF8 /* Ambiente.swift */,
+				B4A3B5922472ACA5000A07C1 /* UseCaseProtocol.swift */,
 			);
 			path = Arch;
 			sourceTree = "<group>";
@@ -872,6 +877,7 @@
 				B1B751E4233D28D6002C83F2 /* AppDelegate.swift in Sources */,
 				A00A0E89235BA51E0041085C /* Coodinator.swift in Sources */,
 				A00A0EAE235BDBC00041085C /* Requestable.swift in Sources */,
+				B4A3B5932472ACA5000A07C1 /* UseCaseProtocol.swift in Sources */,
 				A00A0E90235BC2E00041085C /* LoadingViewController.swift in Sources */,
 				A00A0ED8235C50070041085C /* BookDetailViewController.swift in Sources */,
 				A00A0E8C235BA64E0041085C /* Storyboarded.swift in Sources */,
@@ -914,6 +920,7 @@
 				A0EDDDB1235CF94F00B68CCF /* BookSeekerCoordinator.swift in Sources */,
 				A00A0EBE235C04F50041085C /* StoreUserSearchUseCase.swift in Sources */,
 				A00A0E97235BD5300041085C /* ListBooksUseCase.swift in Sources */,
+				B4A3B5942472B924000A07C1 /* UseCaseProtocol.swift in Sources */,
 				A0EDDDAA235CF93600B68CCF /* ApiClient.swift in Sources */,
 				A0EDDDBE235CF98600B68CCF /* BookListViewController.swift in Sources */,
 				A0EDDDB5235CF96000B68CCF /* iTunesSearchResponse.swift in Sources */,
@@ -970,6 +977,7 @@
 				A00A0E66235B9EB00041085C /* BaseViewController.swift in Sources */,
 				A00A0EA4235BD6400041085C /* Book.swift in Sources */,
 				A00A0E8D235BA64E0041085C /* Storyboarded.swift in Sources */,
+				B4A3B5952472B924000A07C1 /* UseCaseProtocol.swift in Sources */,
 				A00A0EAC235BD84B0041085C /* ApiClient.swift in Sources */,
 				A00A0EC3235C05B00041085C /* SearchRepository.swift in Sources */,
 				A00A0ECA235C11350041085C /* BookListViewController.swift in Sources */,

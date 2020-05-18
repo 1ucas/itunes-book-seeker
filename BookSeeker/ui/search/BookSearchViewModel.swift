@@ -4,11 +4,11 @@ import RxRelay
 
 class BookSearchViewModel: BaseViewModel {
 
-    private let listBooksUseCase: ListBooksUseCaseProtocol!
+    private var listBooksUseCase: ListBooksUseCase
     private let storeUserSearchUseCase: StoreUserSearchUseCase = StoreUserSearchUseCase()
     private let listUserSearchUseCase: ListUserSearchUseCase = ListUserSearchUseCase()
 
-    init(listBooksUseCase: ListBooksUseCaseProtocol) {
+    init(listBooksUseCase: ListBooksUseCase) {
         self.listBooksUseCase = listBooksUseCase
     }
 
@@ -20,7 +20,7 @@ class BookSearchViewModel: BaseViewModel {
 
     func listBooks(title: String) {
         showLoading.accept(())
-        listBooksUseCase.list(title: title, completion: { bookList, error in
+        listBooksUseCase.execute(input: title, completion: { bookList, error in
             if let bookList = bookList {
                 self.booksToDisplay.accept(bookList)
             } else {
@@ -36,22 +36,8 @@ class BookSearchViewModel: BaseViewModel {
         showLoading.accept(())
         listUserSearchUseCase.list(completion: { searches in
             self.hideLoading.accept(())
-            let buscarFiltradas = self.filtrarPalavrasProibidas(searches: searches)
-            let buscarFiltradasV2 = self.filtrarBatata(searches: buscarFiltradas)
-            self.searchesToDisplay.accept(buscarFiltradasV2)
+            self.searchesToDisplay.accept(searches)
         })
-    }
-    
-    private func filtrarPalavrasProibidas(searches: [String]) -> [String] {
-        return searches.filter { palavra -> Bool in
-            return palavra != "Lucas"
-        }
-    }
-    
-    private func filtrarBatata(searches: [String]) -> [String] {
-        return searches.filter { palavra -> Bool in
-            return palavra != "Batata"
-        }
     }
 
     func storeUserSearches(term: String) {

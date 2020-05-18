@@ -2,14 +2,16 @@ import Foundation
 
 public class ListBooksUseCase: ListBooksUseCaseProtocol {
 
-    private let booksRepository: BookRepositoryProtocol
-
+    private var booksRepository: BookRepositoryProtocol?
+    
+    init() {}
     init(repository: BookRepositoryProtocol) {
         self.booksRepository = repository
     }
 
-    public func list(title: String, completion: @escaping ([Book]?, ApiErrorResponse?) -> Void) {
-        booksRepository.list(title: title, completion: { lista, apiError in
+    public func execute(input: String, completion: @escaping ([Book]?, ApiErrorResponse?) -> Void) {
+        guard let booksRepository = booksRepository else { return }
+        booksRepository.list(title: input, completion: { lista, apiError in
 
             if let apiError = apiError {
                 completion(nil, apiError)
