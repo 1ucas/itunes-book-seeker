@@ -4,11 +4,11 @@ import RxRelay
 
 class BookSearchViewModel: BaseViewModel {
 
-    private let listBooksUseCase: ListBooksUseCase
+    private let listBooksUseCase: BaseListBooksUseCase
     private let storeUserSearchUseCase: StoreUserSearchUseCase = StoreUserSearchUseCase()
     private let listUserSearchUseCase: ListUserSearchUseCase = ListUserSearchUseCase()
 
-    init(listBooksUseCase: ListBooksUseCase) {
+    init(listBooksUseCase: BaseListBooksUseCase) {
         self.listBooksUseCase = listBooksUseCase
     }
 

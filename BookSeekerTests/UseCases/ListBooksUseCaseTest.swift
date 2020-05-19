@@ -4,16 +4,13 @@ import XCTest
 
 class ListBooksUseCaseTest: XCTestCase {
 
-    var bookSeekerContainer: Container!
     var useCase: ListBooksUseCase!
 
     override func setUp() {
-        bookSeekerContainer = BookSeekerContainer(mockRepository: true).container
-        useCase = bookSeekerContainer.resolve(ListBooksUseCase.self)
+        useCase = ListBooksUseCase(repository: BookMockRepository())
     }
 
     override func tearDown() {
-        bookSeekerContainer = nil
         useCase = nil
     }
 
