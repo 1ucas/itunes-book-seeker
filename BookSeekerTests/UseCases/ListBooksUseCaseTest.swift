@@ -2,6 +2,8 @@ import Foundation
 import Swinject
 import XCTest
 
+@testable import BookSeeker
+
 class ListBooksUseCaseTest: XCTestCase {
 
     var useCase: ListBooksUseCase!

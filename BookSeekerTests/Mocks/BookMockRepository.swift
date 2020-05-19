@@ -1,5 +1,7 @@
 import Foundation
 
+@testable import BookSeeker
+
 class BookMockRepository: BookRepositoryProtocol {
     func list(title: String, completion: @escaping ([Book]?, ApiErrorResponse?) -> Void) {
         if title == "Lucas" {
