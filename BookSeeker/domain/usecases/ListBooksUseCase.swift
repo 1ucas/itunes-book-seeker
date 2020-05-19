@@ -1,14 +1,23 @@
 import Foundation
 
-public class ListBooksUseCase: ListBooksUseCaseProtocol {
+class BaseListBooksUseCase: UseCaseProtocol {
+    typealias InputType = String
+    typealias OutputType = [Book]?
+
+    func execute(input: String, completion: @escaping ([Book]?, ApiErrorResponse?) -> Void) {
+        fatalError("Método deve ser sobrescrito.")
+    }
+}
+
+class ListBooksUseCase: BaseListBooksUseCase {
 
     private let booksRepository: BookRepositoryProtocol
     
-    init(repository: BookRepositoryProtocol = BookRepository()) {
+    init(repository: BookRepositoryProtocol) {
         self.booksRepository = repository
     }
 
-    public func execute(input: String, completion: @escaping ([Book]?, ApiErrorResponse?) -> Void) {
+    override func execute(input: String, completion: @escaping ([Book]?, ApiErrorResponse?) -> Void) {
         booksRepository.list(title: input, completion: { lista, apiError in
 
             if let apiError = apiError {

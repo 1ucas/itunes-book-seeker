@@ -1,11 +1,11 @@
 import Foundation
 
-public class ListBooksMockUseCase: ListBooksUseCase {
+class ListBooksMockUseCase: BaseListBooksUseCase {
 
     var deveRetornarErro: Bool = false
     var livrosRetornados: [Book]?
     
-    public override func execute(input: String, completion: @escaping ([Book]?, ApiErrorResponse?) -> Void) {
+    override func execute(input: String, completion: @escaping ([Book]?, ApiErrorResponse?) -> Void) {
         if deveRetornarErro {
             completion(nil, ApiErrorResponse(code: -1, message: ""))
         } else {

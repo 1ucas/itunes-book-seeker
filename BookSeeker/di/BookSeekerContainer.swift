@@ -24,7 +24,7 @@ extension BookSeekerContainer {
     }
     
     private func registerUseCases() {
-        container.register(ListBooksUseCase.self) { resolver in
+        container.register(BaseListBooksUseCase.self) { resolver in
             let repository = resolver.resolve(BookRepositoryProtocol.self)
             return ListBooksUseCase(repository: repository!)
         }
@@ -32,7 +32,7 @@ extension BookSeekerContainer {
     
     private func registerViewModels() {
         container.register(BookSearchViewModel.self) { resolver in
-            let useCase = resolver.resolve(ListBooksUseCase.self)
+            let useCase = resolver.resolve(BaseListBooksUseCase.self)
             return BookSearchViewModel(listBooksUseCase: useCase!)
         }
     }
