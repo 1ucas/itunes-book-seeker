@@ -78,12 +78,9 @@
 		A02F45CB246B15C800A64BF8 /* Ambiente.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F45C9246B15C800A64BF8 /* Ambiente.swift */; };
 		A02F45CC246B15C800A64BF8 /* Ambiente.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F45C9246B15C800A64BF8 /* Ambiente.swift */; };
 		A064113B2469EF0100147959 /* BookSearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A064113A2469EF0100147959 /* BookSearchViewModelTests.swift */; };
-		A064113E2469F43300147959 /* ListBooksUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A064113D2469F43300147959 /* ListBooksUseCaseProtocol.swift */; };
-		A064113F2469F43300147959 /* ListBooksUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A064113D2469F43300147959 /* ListBooksUseCaseProtocol.swift */; };
 		A06411422469F50300147959 /* ListBooksMockUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06411412469F50300147959 /* ListBooksMockUseCase.swift */; };
 		A066A63A246ABB79006D7A1A /* BookMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A066A639246ABB79006D7A1A /* BookMocks.swift */; };
 		A066A63B246ABE8D006D7A1A /* BookMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A066A639246ABB79006D7A1A /* BookMocks.swift */; };
-		A066A63C246ABEE6006D7A1A /* ListBooksUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A064113D2469F43300147959 /* ListBooksUseCaseProtocol.swift */; };
 		A066A63D246ABF1D006D7A1A /* BookMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A066A639246ABB79006D7A1A /* BookMocks.swift */; };
 		A066A640246AC277006D7A1A /* BookRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A066A63E246AC277006D7A1A /* BookRepositoryTest.swift */; };
 		A0A05ABE238E0E540078978B /* ListBooksTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A05ABD238E0E540078978B /* ListBooksTest.swift */; };
@@ -192,7 +189,6 @@
 		A02BC6A52390CD8D00C93A38 /* UseCaseException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseException.swift; sourceTree = "<group>"; };
 		A02F45C9246B15C800A64BF8 /* Ambiente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ambiente.swift; sourceTree = "<group>"; };
 		A064113A2469EF0100147959 /* BookSearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchViewModelTests.swift; sourceTree = "<group>"; };
-		A064113D2469F43300147959 /* ListBooksUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBooksUseCaseProtocol.swift; sourceTree = "<group>"; };
 		A06411412469F50300147959 /* ListBooksMockUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBooksMockUseCase.swift; sourceTree = "<group>"; };
 		A066A639246ABB79006D7A1A /* BookMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMocks.swift; sourceTree = "<group>"; };
 		A066A63E246AC277006D7A1A /* BookRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepositoryTest.swift; sourceTree = "<group>"; };
@@ -317,7 +313,6 @@
 		A00A0E69235B9F700041085C /* usecases */ = {
 			isa = PBXGroup;
 			children = (
-				A064113C2469F41300147959 /* protocols */,
 				A02BC6A02390CD2600C93A38 /* exceptions */,
 				A00A0E95235BD5300041085C /* ListBooksUseCase.swift */,
 				A00A0EBC235C04F50041085C /* StoreUserSearchUseCase.swift */,
@@ -457,14 +452,6 @@
 				A02BC6A52390CD8D00C93A38 /* UseCaseException.swift */,
 			);
 			path = exceptions;
-			sourceTree = "<group>";
-		};
-		A064113C2469F41300147959 /* protocols */ = {
-			isa = PBXGroup;
-			children = (
-				A064113D2469F43300147959 /* ListBooksUseCaseProtocol.swift */,
-			);
-			path = protocols;
 			sourceTree = "<group>";
 		};
 		A06411402469F4E400147959 /* UseCases */ = {
@@ -868,7 +855,6 @@
 				A0EDDD9E235CF04F00B68CCF /* BookRepositoryProtocol.swift in Sources */,
 				A00A0E9F235BD62B0041085C /* BookDTO.swift in Sources */,
 				A02BC6A62390CD8D00C93A38 /* UseCaseException.swift in Sources */,
-				A064113E2469F43300147959 /* ListBooksUseCaseProtocol.swift in Sources */,
 				A00A0E64235B9EAC0041085C /* BaseViewModel.swift in Sources */,
 				A00A0EA7235BD7890041085C /* ApiErrorResponse.swift in Sources */,
 				A00A0E62235B9E7C0041085C /* BaseViewController.swift in Sources */,
@@ -909,7 +895,6 @@
 				A0EDDD9F235CF04F00B68CCF /* BookRepositoryProtocol.swift in Sources */,
 				A0EDDDAF235CF94700B68CCF /* Coodinator.swift in Sources */,
 				A066A63A246ABB79006D7A1A /* BookMocks.swift in Sources */,
-				A064113F2469F43300147959 /* ListBooksUseCaseProtocol.swift in Sources */,
 				A02BC6A72390CD8D00C93A38 /* UseCaseException.swift in Sources */,
 				A0EDDDB3235CF95800B68CCF /* ListBooksRequest.swift in Sources */,
 				A0EDDDC0235CF98C00B68CCF /* BookSearchViewModel.swift in Sources */,
@@ -971,7 +956,6 @@
 				A00A0ED9235C50070041085C /* BookDetailViewController.swift in Sources */,
 				A00A0E91235BC2E00041085C /* LoadingViewController.swift in Sources */,
 				A00A0EBF235C04F50041085C /* StoreUserSearchUseCase.swift in Sources */,
-				A066A63C246ABEE6006D7A1A /* ListBooksUseCaseProtocol.swift in Sources */,
 				A00A0E65235B9EAC0041085C /* BaseViewModel.swift in Sources */,
 				A0EDDDA0235CF04F00B68CCF /* BookRepositoryProtocol.swift in Sources */,
 				A00A0E66235B9EB00041085C /* BaseViewController.swift in Sources */,
