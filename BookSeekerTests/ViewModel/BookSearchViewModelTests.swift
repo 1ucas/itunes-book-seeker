@@ -7,7 +7,6 @@ import RxSwift
 
 class BookSearchViewModelTests: QuickSpec {
 
-    private var bookSeekerContainer: Container!
     private var viewModel: BookSearchViewModel!
     private var useCase: ListBooksMockUseCase!
     private var disposeBag: DisposeBag!
@@ -91,7 +90,6 @@ class BookSearchViewModelTests: QuickSpec {
     }
 
     override func tearDown() {
-        bookSeekerContainer = nil
         viewModel = nil
     }
 }
