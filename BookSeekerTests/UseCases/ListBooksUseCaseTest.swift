@@ -15,17 +15,19 @@ class ListBooksUseCaseTest: XCTestCase {
     }
 
     func testUseCaseWithSuccess() {
-        useCase?.execute(input: "Dog", completion: { books, error in
-            XCTAssertNotNil(books)
+        let params = ListBooksUseCaseParams(title: "Dog")
+        useCase?.execute(input: params, completion: { response, error in
+            XCTAssertNotNil(response)
             XCTAssertNil(error)
-            XCTAssertEqual(books?.count, 1)
+            XCTAssertEqual(response?.livros?.count, 1)
         })
     }
 
     func testUseCaseWithApiError() {
-        useCase?.execute(input: "Lucas", completion: { books, error in
+        let params = ListBooksUseCaseParams(title: "Lucas")
+        useCase?.execute(input: params, completion: { response, error in
             XCTAssertNotNil(error)
-            XCTAssertNil(books)
+            XCTAssertNil(response)
         })
     }
 }

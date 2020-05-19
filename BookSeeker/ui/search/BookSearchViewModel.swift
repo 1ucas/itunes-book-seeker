@@ -20,9 +20,10 @@ class BookSearchViewModel: BaseViewModel {
 
     func listBooks(title: String) {
         showLoading.accept(())
-        listBooksUseCase.execute(input: title, completion: { bookList, error in
-            if let bookList = bookList {
-                self.booksToDisplay.accept(bookList)
+        let params = ListBooksUseCaseParams(title: title)
+        listBooksUseCase.execute(input: params, completion: { bookList, error in
+            if let bookList = bookList, let livros = bookList.livros {
+                self.booksToDisplay.accept(livros)
             } else {
                 if let error = error {
                     self.errorListBooks.accept(error)
