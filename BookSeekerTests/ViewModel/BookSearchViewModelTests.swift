@@ -5,6 +5,8 @@ import Quick
 import Nimble
 import RxSwift
 
+@testable import BookSeeker
+
 class BookSearchViewModelTests: QuickSpec {
 
     private var viewModel: BookSearchViewModel!

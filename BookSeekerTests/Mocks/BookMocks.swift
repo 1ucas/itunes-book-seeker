@@ -1,5 +1,7 @@
 import Foundation
 
+@testable import BookSeeker
+
 public class BookMocks {
     
     static var livroDog = Book(title: "Dog1", author: "Author1", description: "Description1",

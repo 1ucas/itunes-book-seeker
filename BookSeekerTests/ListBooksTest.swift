@@ -2,6 +2,8 @@ import Quick
 import Nimble
 import Swinject
 
+@testable import BookSeeker
+
 class ListBooksTest: QuickSpec {
 
     var useCase: ListBooksUseCase!

@@ -1,5 +1,7 @@
 import Foundation
 
+@testable import BookSeeker
+
 class ListBooksMockUseCase: BaseListBooksUseCase {
 
     var deveRetornarErro: Bool = false

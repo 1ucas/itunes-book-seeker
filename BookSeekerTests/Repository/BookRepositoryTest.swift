@@ -2,6 +2,8 @@ import Swifter
 import Quick
 import Nimble
 
+@testable import BookSeeker
+
 class BookRepositoryTest: QuickSpec {
     
     private var repositorio: BookRepository!
