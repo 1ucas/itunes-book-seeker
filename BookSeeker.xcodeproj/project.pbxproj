@@ -61,6 +61,7 @@
 		B4E80B4B2469CAAC0082D04E /* BookSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E80B4F2469CAAC0082D04E /* BookSearch.storyboard */; };
 		B4E80B562469CB7E0082D04E /* BookDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E80B5A2469CB7E0082D04E /* BookDetail.storyboard */; };
 		B4E80B5F2469CC3B0082D04E /* BookList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E80B632469CC3B0082D04E /* BookList.storyboard */; };
+		CDD689BD247CA12400CE7CDC /* BookMockServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD689BC247CA12400CE7CDC /* BookMockServer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,7 @@
 		B4E80B622469CC3B0082D04E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/BookList.storyboard; sourceTree = "<group>"; };
 		B4E80B652469CC3F0082D04E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BookList.strings; sourceTree = "<group>"; };
 		B4E80B672469CC3F0082D04E /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/BookList.strings"; sourceTree = "<group>"; };
+		CDD689BC247CA12400CE7CDC /* BookMockServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMockServer.swift; sourceTree = "<group>"; };
 		D4F46FFADC34FE9B6D6D877F /* Pods-BookSeekerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSeekerUITests.debug.xcconfig"; path = "Target Support Files/Pods-BookSeekerUITests/Pods-BookSeekerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FD9409A16A258352BDE9835E /* Pods_BookSeekerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookSeekerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -422,6 +424,7 @@
 				A06411412469F50300147959 /* ListBooksMockUseCase.swift */,
 				A0EDDDA2235CF10A00B68CCF /* BookMockRepository.swift */,
 				A066A639246ABB79006D7A1A /* BookMocks.swift */,
+				CDD689BC247CA12400CE7CDC /* BookMockServer.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -810,6 +813,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0EDDDA4235CF10A00B68CCF /* BookMockRepository.swift in Sources */,
+				CDD689BD247CA12400CE7CDC /* BookMockServer.swift in Sources */,
 				A0EDDDAB235CF93B00B68CCF /* LoadingViewController.swift in Sources */,
 				A066A63A246ABB79006D7A1A /* BookMocks.swift in Sources */,
 				A0A05ABE238E0E540078978B /* ListBooksTest.swift in Sources */,

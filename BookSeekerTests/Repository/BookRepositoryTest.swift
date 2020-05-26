@@ -1,4 +1,3 @@
-import Swifter
 import Quick
 import Nimble
 
@@ -7,29 +6,15 @@ import Nimble
 class BookRepositoryTest: QuickSpec {
     
     private var repositorio: BookRepository!
-
-    private var server: HttpServer!
     
-    override func setUp() {
-        
+    override func tearDown() {
     }
     
     override func spec() {
-        do {
-            self.server = HttpServer()
-            
-            let jsonEncoder = JSONEncoder()
-            let data = try jsonEncoder.encode(BookMocks.resultadoComUmLivro)
-            let dataString = String(data: data, encoding: .utf8)
-            
-            self.server["/search"] = { _ in .ok(.text(dataString!))  }
-            try self.server.start()
-            
-            Ambiente.BASE_URL = AmbientesApi.TESTES.rawValue
-            self.repositorio = BookRepository()
-        } catch {
-            print("Server - Error - \(error)")
+        runServer {
+            BookMockServer.registerResponse(route: "/search", object: BookMocks.resultadoComUmLivro)
         }
+        self.repositorio = BookRepository()
         
         testBuscaComSucesso()
     }
@@ -47,15 +32,20 @@ class BookRepositoryTest: QuickSpec {
                 })
                 
                 // Então
-                it("deve obter uma lista de livros") {
-                    expect(livrosObtidos).toEventually(haveCount(1))
-                }
-                    
                 it("nao deve retornar erro") {
                     expect(erroApi).toEventually(beNil())
                 }
+                
+                it("deve obter uma lista de livros") {
+                    expect(livrosObtidos).toEventually(haveCount(1))
+                }
             }
         }
+    }
+    
+    private func runServer(registrations: () -> Void) {
+        registrations()
+        BookMockServer.start()
     }
     
 }
