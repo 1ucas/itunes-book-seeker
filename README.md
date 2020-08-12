@@ -27,6 +27,7 @@ Um aplicativo que faz a busca de uma lista de livros com base no termo pesquisad
 - [x] Testes Unitários
 - [x] Testes Testes de Integração (API)
 - [x] Gerenciador de Dependências - Cocoapods
+- [x] Padrão de Qualidade (QA) - Swiftlint
 
 ## Bibliotecas Utilizadas:
 
