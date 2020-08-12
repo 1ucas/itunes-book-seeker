@@ -1,7 +1,8 @@
 # Buscador de Livros na iTunes Store
 
 Este é um aplicativo nativo iOS estilo showcase para testes / aplicações de funcionalidades.
-Não deve ser usado como "base" para nenhum projeto porque é certo que irá apresentar mais funciondalidades ou até alguns pontos de overengineering,
+
+Não deve ser usado como "base" para nenhum projeto porque é certo que irá apresentar mais funciondalidades do que esperado ou até alguns pontos de overengineering,
 
 ## Core:
 
