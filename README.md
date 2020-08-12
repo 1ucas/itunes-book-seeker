@@ -1,6 +1,11 @@
 # Buscador de Livros na iTunes Store
 
-### Um aplicativo que faz a busca de uma lista de livros com base no termo pesquisado
+Este é um aplicativo nativo iOS estilo showcase para testes / aplicações de funcionalidades.
+Não deve ser usado como "base" para nenhum projeto porque é certo que irá apresentar mais funciondalidades ou até alguns pontos de overengineering,
+
+## Core:
+
+Um aplicativo que faz a busca de uma lista de livros com base no termo pesquisado
 
 ## Funcionalidades:
 
@@ -11,9 +16,10 @@
 ## Tecnologia / Stack:
 
 - [x] Clean Architecture
-- [x] MVVM
-- [x] Navegação - Coordinators
-- [x] Exibição - Storyboards (1x1)
+- [x] MVVM-C
+- [x] View - View Controllers + Storyboards (1x1)
+- [x] Presenter - ViewModel (com propriedades reativas)
+- [x] Router - Coordinators
 - [x] Persistência - NSUserDefaults
 - [x] Testes Unitários
 - [x] Testes Testes de Integração (API)
