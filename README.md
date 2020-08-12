@@ -2,7 +2,9 @@
 
 Este é um aplicativo nativo iOS estilo showcase para testes / aplicações de funcionalidades.
 
-Não deve ser usado como "base" para nenhum projeto porque é certo que irá apresentar mais funciondalidades do que esperado ou até alguns pontos de overengineering,
+Deve ser utilizado como consulta de implementações e referência de evolução das plataformas, framework e bibliotecas.
+
+Não deve ser usado como "base" para nenhum projeto, mas sim como consulta porque é certo que irá apresentar mais funciondalidades do que esperado ou até alguns pontos de overengineering,
 
 ## Core:
 
@@ -24,22 +26,26 @@ Um aplicativo que faz a busca de uma lista de livros com base no termo pesquisad
 - [x] Persistência - NSUserDefaults
 - [x] Testes Unitários
 - [x] Testes Testes de Integração (API)
+- [x] Gerenciador de Dependências - Cocoapods
 
 ## Bibliotecas Utilizadas:
 
 - [x] RxSwift
 - [x] Kingfisher
 - [x] Quick / Nimble
-- [ ] Alamofire
+- [x] Alamofire
 
 ## Work in Progress (WIP):
 
 - [ ] Pipeline - Em construção
-- [ ] Exibição - ViewCode 
 
 ## Trabalho Futuro (Roadmap):
 
 - [ ] Analytics
 - [ ] Modularização
 - [ ] Persistência - CoreData
+- [ ] Persistência - Realm
 - [ ] Alamofire -> Moya
+- [ ] Gerenciador de Dependências - Carthage + Pods
+- [ ] Exibição - ViewCode + Storyboard
+- [ ] Certificate Pinning
