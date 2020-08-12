@@ -25,8 +25,21 @@ Um aplicativo que faz a busca de uma lista de livros com base no termo pesquisad
 - [x] Testes Unitários
 - [x] Testes Testes de Integração (API)
 
+## Bibliotecas Utilizadas:
+
+- [x] RxSwift
+- [x] Kingfisher
+- [x] Quick / Nimble
+- [ ] Alamofire
+
 ## Work in Progress (WIP):
 
 - [ ] Pipeline - Em construção
 - [ ] Exibição - ViewCode 
+
+## Trabalho Futuro (Roadmap):
+
+- [ ] Analytics
+- [ ] Modularização
 - [ ] Persistência - CoreData
+- [ ] Alamofire -> Moya
