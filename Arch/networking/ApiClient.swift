@@ -5,7 +5,7 @@ class ApiClient: NSObject {
     
     public static let instance = ApiClient()
     
-    private var sessionManager: SessionManager?
+    private var sessionManager: Session?
     
     private override init() { }
 }
@@ -17,11 +17,12 @@ extension ApiClient {
         
         let url = "\(Ambiente.BASE_URL)\(request.url)"
         
-        sessionManager = Alamofire.SessionManager.default
+        sessionManager = Alamofire.Session.default
         
         sessionManager!.request(url, method: request.method, parameters: request.parameters, encoding: request.encoding).responseJSON { (response) in
             
-            if response.result.isSuccess {
+            switch response.result {
+            case .success:
                 if let httpResponseCode = response.response?.statusCode {
                     switch httpResponseCode {
                     case 200:
@@ -38,7 +39,7 @@ extension ApiClient {
                     }
                 }
                 
-            } else {
+            case .failure:
                 completion(nil, ApiErrorResponse(code: -1, message: "Ocorreu um erro"))
             }
         }

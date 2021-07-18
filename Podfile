@@ -12,7 +12,7 @@ target 'BookSeeker' do
   end
 
   def networking_pods
-    pod 'Alamofire', '4.8.2'
+    pod 'Alamofire', '5.4.3'
   end
 
   def kingfisher_pods
