@@ -36,7 +36,7 @@ class BookSearchViewModelTests: QuickSpec {
                     self.useCase.deveRetornarErro = false
                     self.useCase.livrosRetornados = BookMocks.listaComUm
                     
-                    self.viewModel.booksToDisplay.asObservable().skip(1).subscribe(
+                    self.viewModel.booksToDisplay.asObservable().subscribe(
                         onNext: { livros in
                             livrosObtidos = livros
                     }).disposed(by: self.disposeBag)
@@ -64,12 +64,12 @@ class BookSearchViewModelTests: QuickSpec {
                     // Dado que
                     self.useCase.deveRetornarErro = true
                     
-                    self.viewModel.booksToDisplay.asObservable().skip(1).subscribe(
+                    self.viewModel.booksToDisplay.asObservable().subscribe(
                         onNext: { livros in
                             livrosObtidos = livros
                     }).disposed(by: self.disposeBag)
                     
-                    self.viewModel.errorListBooks.asObservable().skip(1).subscribe(
+                    self.viewModel.errorListBooks.asObservable().subscribe(
                         onNext: { erro in
                             erroApi = erro
                         }

@@ -15,10 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-//    func applicationWillEnterForeground(_ application: UIApplication) {
-//        navigationController.popToRootViewController(animated: false)
-//    }
-
     func configureNavigation() {
 
         coordinator = BookSeekerCoordinator()

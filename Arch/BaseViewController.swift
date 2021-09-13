@@ -15,11 +15,11 @@ class BaseViewController<T:BaseViewModel, V:Coordinator>: UIViewController, Stor
     }
     
     private func bindLoading() {
-        viewModel.showLoading.asObservable().skip(1).subscribe(onNext: {
+        viewModel.showLoading.asObservable().subscribe(onNext: {
             self.showLoading()
         }).disposed(by: viewModel.bag)
         
-        viewModel.hideLoading.asObservable().skip(1).subscribe(onNext: {
+        viewModel.hideLoading.asObservable().subscribe(onNext: {
             self.hideLoading()
         }).disposed(by: viewModel.bag)
     }

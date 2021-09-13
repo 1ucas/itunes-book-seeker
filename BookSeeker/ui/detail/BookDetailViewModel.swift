@@ -4,7 +4,7 @@ import RxRelay
 class BookDetailViewModel: BaseViewModel {
 
     var book: Book?
-    var loadedBook = BehaviorRelay<Book?>(value: nil)
+    var loadedBook = PublishRelay<Book?>()
 
     func loadBookDetails() {
         loadedBook.accept(self.book)

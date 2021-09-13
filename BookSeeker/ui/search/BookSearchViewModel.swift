@@ -12,11 +12,11 @@ class BookSearchViewModel: BaseViewModel {
         self.listBooksUseCase = listBooksUseCase
     }
 
-    var booksToDisplay = BehaviorRelay<[Book]>(value: [])
+    var booksToDisplay = PublishRelay<[Book]>()
 
-    var searchesToDisplay = BehaviorRelay<[String]>(value: [])
+    var searchesToDisplay = PublishRelay<[String]>()
 
-    var errorListBooks  = BehaviorRelay<ApiErrorResponse>(value: ApiErrorResponse())
+    var errorListBooks  = PublishRelay<ApiErrorResponse>()
 
     func listBooks(title: String) {
         showLoading.accept(())

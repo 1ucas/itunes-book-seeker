@@ -29,12 +29,12 @@ class BookSearchViewController: BaseViewController<BookSearchViewModel, BookSeek
     }
 
     private func bindUI() {
-        viewModel.booksToDisplay.asObservable().skip(1).subscribe(onNext: { [unowned self] books in
+        viewModel.booksToDisplay.asObservable().subscribe(onNext: { [unowned self] books in
             self.recordSearch(self.bookSearchBar.text!)
             self.coordinator.showBookList(books: books)
         }).disposed(by: viewModel.bag)
 
-        viewModel.searchesToDisplay.asObservable().skip(1).subscribe(onNext: { searches in
+        viewModel.searchesToDisplay.asObservable().subscribe(onNext: { searches in
             self.userSearches = searches
         }).disposed(by: viewModel.bag)
     }

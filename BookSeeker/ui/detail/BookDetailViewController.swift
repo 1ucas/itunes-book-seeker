@@ -20,7 +20,7 @@ class BookDetailViewController: BaseViewController<BookDetailViewModel, BookSeek
     }
 
     func bindUI() {
-        viewModel.loadedBook.asObservable().skip(1).subscribe(onNext: { [unowned self] book in
+        viewModel.loadedBook.asObservable().subscribe(onNext: { [unowned self] book in
             if let book = book {
                 let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
                     NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html,

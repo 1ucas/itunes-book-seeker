@@ -43,7 +43,7 @@ target 'BookSeeker' do
   target 'BookSeekerTests' do
     inherit! :search_paths
     test_pods
-    pod 'Swifter', '~> 1.4.7'
+    pod 'Swifter', '~> 1.5.0'
   end
 
   target 'BookSeekerUITests' do

@@ -26,7 +26,7 @@ class BookListViewController: BaseViewController<BookListViewModel, BookSeekerCo
     }
     
     private func bindUI() {
-        viewModel.booksToDisplay.asObservable().skip(1).subscribe(onNext: { [unowned self] books in
+        viewModel.booksToDisplay.asObservable().subscribe(onNext: { [unowned self] books in
             self.bookList = books
         }).disposed(by: viewModel.bag)
     }

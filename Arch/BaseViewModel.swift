@@ -5,8 +5,8 @@ import RxSwift
 
 class BaseViewModel {
     
-    var showLoading = BehaviorRelay<Void>(value: ())
-    var hideLoading = BehaviorRelay<Void>(value: ())
+    var showLoading = PublishRelay<Void>()
+    var hideLoading = PublishRelay<Void>()
     let bag = DisposeBag()
     
 }

@@ -3,7 +3,7 @@ import RxRelay
 
 class BookListViewModel: BaseViewModel {
 
-    var booksToDisplay = BehaviorRelay<[Book]>(value: [])
+    var booksToDisplay = PublishRelay<[Book]>()
 
     private let books: [Book]
 
