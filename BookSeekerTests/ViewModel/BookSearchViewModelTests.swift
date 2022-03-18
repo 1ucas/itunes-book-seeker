@@ -47,7 +47,7 @@ class BookSearchViewModelTests: QuickSpec {
                 
                 // Então
                 it("deve obter uma lista de livros") {
-                    expect(livrosObtidos).toNotEventually(beNil())
+                    expect(livrosObtidos).toEventually(haveCount(1))
                 }
             }
         }
